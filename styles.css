@@ -1,0 +1,127 @@
+/* Основной контейнер */
+.container {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas:
+        "top-nav"
+        "header-content"
+        "main-content";
+    max-width: 985px;
+    margin: 0 auto;
+    background: black;
+}
+
+/* Класс строки */
+.row {
+    display: grid;
+    grid-template-columns: 289px 675px; /* Левая и правая колонки */
+    column-gap: 21px; /* Отступ между колонками */
+    margin-bottom: 20px; /* Отступ между строками */
+    align-items: center; /* Выравнивание элементов по центру строки */
+    overflow: hidden; /* Предотвращает выход элементов за границы */
+}
+
+/* Левая колонка */
+.left-sidebar {
+    grid-column: 1 / 2;
+    background-color: #f2f2f2; /* Фон для наглядности */
+    overflow: hidden;
+}
+
+/* Правая колонка (основной контент) */
+.main-content {
+    grid-column: 3 / 4;
+    background-color: #eaeaea; /* Фон для наглядности */
+    padding: 10px; /* Внутренний отступ для основного контента */
+    overflow: hidden;
+}
+
+/* Верхнее навигационное меню */
+.top-nav {
+    grid-area: top-nav;
+    text-align: right;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.top-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.top-nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.top-nav li:last-child {
+    margin-right: 0;
+}
+
+.top-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Общее расположение логотипа и навигации */
+.header-content {
+    grid-area: header-content;
+    display: grid;
+    grid-template-columns: 289px 1fr; /* Логотип фиксированной ширины, меню занимает оставшееся пространство */
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* Логотип */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 289px; /* Фиксированная ширина для логотипа */
+}
+
+.logo-the {
+    width: 45px;
+    margin-bottom: -1px; /* Пододвигаем вплотную к "ULTIMA" */
+}
+
+.logo-ultima {
+    width: 265px; /* Ширина для "ULTIMA" */
+    margin-bottom: -18px; /* Пододвигаем подзаголовок вплотную */
+}
+
+.logo-subtitle {
+    width: 281px; /* Ширина для подзаголовка */
+}
+
+
+/* Основное навигационное меню */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.main-nav a:hover {
+    color: #ffcc00;
+}
+
+/* Основной контент */
+.main-content {
+    grid-area: main-content;
+    background-color: #eaeaea;
+    padding: 20px;
+}
